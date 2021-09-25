@@ -1,0 +1,15 @@
+
+.product-container{
+    border-right: 1px solid lightgray;
+    margin-right: 5px;
+    margin-left: 50px;
+}
+
+
+@media only screen and (max-width: 748px) {
+    
+    .product-container{
+        border:none;
+    }
+    
+  }

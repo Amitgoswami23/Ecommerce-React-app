@@ -1,0 +1,36 @@
+.product{
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid lightgray;;
+    margin-right: 5px;
+}
+
+.product-name{
+    color: blue;
+    font-weight: 400;
+}
+
+.btn-cart{
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    background: linear-gradient(45deg, lightsalmon, tomato);
+    color: white;
+    margin-bottom: 15px;
+}
+
+.icon-color{
+    color: gold;
+}
+
+
+@media only screen and (max-width: 748px) {
+    .product{
+        display: flex;
+        flex-direction: column;
+    }
+    
+  }
