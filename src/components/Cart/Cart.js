@@ -3,8 +3,9 @@ import './Cart.css'
 
 const Cart = (props) => {
     // console.log(props.cart)
+    //console.log(props);
     const{ cart } = props; // distructure in react 
-
+    //console.log(props);
     let totalQuantity = 0;
     let total = 0;
 
