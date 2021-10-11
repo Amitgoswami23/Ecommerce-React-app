@@ -1,3 +1,6 @@
+//user wants to add a product
+//find the place to store the data
+
 // use local storage as your db for now
 const addToDb = id => {
   const exists = getDb();
@@ -5,7 +8,7 @@ const addToDb = id => {
   if (!exists) {
     shopping_cart[id] = 1;
   }
-  else {
+  else { 
     shopping_cart = JSON.parse(exists);
     if (shopping_cart[id]) {
       const newCount = shopping_cart[id] + 1;

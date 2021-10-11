@@ -5,36 +5,61 @@ import Inventory from './components/Inventory/Inventory';
 import OrderReview from './components/OrderReview/OrderReview';
 import Shop from './components/Shop/Shop';
 import NotFound from './components/NotFound/NotFound';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Shipping from './components/Shipping/Shipping';
 
 function App() {
   return (
     <div>
-      <Router>
-          <Header />
-        <Switch>
+      <AuthProvider>
+          <Router>
+              <Header />
+            <Switch>
 
-          <Route exact path="/">
-            <Shop />
-          </Route>
+              <Route exact path="/">
+                <Shop />
+              </Route>
 
-          <Route path="/shop">
-            <Shop />
-          </Route>
+              <Route path="/shop">
+                <Shop />
+              </Route>
 
-          <Route path="/order">
-            <OrderReview />
-          </Route>
+              <Route path="/order">
+                <OrderReview />
+              </Route>
 
-          <Route path="/inventrory">
-            <Inventory />
-          </Route>
+              <PrivateRoute path="/inventrory">
+                <Inventory />
+              </PrivateRoute>
 
-          <Route path="*">
-            <NotFound />
-          </Route>
+              
+              <PrivateRoute path="/placeorder">
+                <PlaceOrder />
+              </PrivateRoute>
 
-        </Switch>
-      </Router>
+              <PrivateRoute path="/shipping">
+                <Shipping />
+              </PrivateRoute>
+
+              <Route path="/login">
+                <Login />
+              </Route>
+
+              <Route path="/register">
+                <Register />
+              </Route>
+
+              <Route path="*">
+                <NotFound />
+              </Route>
+
+            </Switch>
+          </Router>
+      </AuthProvider>
       
     </div>
   );
